@@ -1,0 +1,14 @@
+{
+    "type": "code",
+    "modid": "truethirdperson",
+    "name": "True Third Person",
+    "authors": [
+        "OldManYells"
+    ],
+    "description": "A 'True' Third Person gameplay experience",
+    "version": "0.0.1",
+    "side": "client",
+    "dependencies": {
+        "game": "1.20.0"
+    }
+}   
