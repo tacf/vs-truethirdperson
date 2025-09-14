@@ -37,7 +37,7 @@ class InputHandlerPatch
     [HarmonyPatch(typeof(HudHotbar), nameof(HudHotbar.OnMouseWheel))]
     public static void OnMouseWheel(ref MouseWheelEventArgs args)
     {
-        if (CameraFunctions.GetDesiredCameraMode() == EnumCameraMode.Overhead) return;
+        if (CameraFunctions.GetDesiredCameraMode() == EnumCameraMode.Overhead || !(_clientApi.Input.IsHotKeyPressed("scrollzoommodifier"))) return;
         
         float newZoom = float.Clamp(_tpDesiredDistance - args.delta * ZoomStep, DefaultMinTpDistance, DefaultMaxTpDistance);
 
@@ -49,7 +49,6 @@ class InputHandlerPatch
         {
             CameraFunctions.RequestCameraUpdate(EnumCameraMode.FirstPerson);
         } 
-        else if (!(_clientApi.Input.KeyboardKeyState[(int)GlKeys.ControlLeft] && CameraFunctions.OverrideCamera)) return;
         
         _tpDesiredDistance = newZoom;
         

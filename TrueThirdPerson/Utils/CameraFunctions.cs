@@ -19,6 +19,7 @@ class CameraFunctions
         RegisterKey("camerastepleft", GlKeys.Left);
         RegisterKey("camerastepup", GlKeys.Up);
         RegisterKey("camerastepdown", GlKeys.Down);
+        RegisterKey("scrollzoommodifier", GlKeys.Tilde);
 
         _clientApi.Input.AddHotkeyListener(HotKeyListener);
         Logger.Log("Hotkeys registered");
@@ -50,7 +51,7 @@ class CameraFunctions
     {
         _clientApi.Input.RegisterHotKey(
             keyCode,
-            Lang.Get($"{TrueThirdPerson.ModInfo.ModID}:{keyCode}"),
+            $"[{TrueThirdPerson.ModInfo.Name}] {Lang.Get($"{TrueThirdPerson.ModInfo.ModID}:{keyCode}")}",
             key, HotkeyType.GUIOrOtherControls);
         _clientApi.Input.SetHotKeyHandler(keyCode, (_) => true);
     }

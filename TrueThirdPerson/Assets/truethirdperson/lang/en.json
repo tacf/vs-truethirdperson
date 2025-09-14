@@ -2,5 +2,6 @@
     "camerastepright": "Move Camera to the right horizontally",
     "camerastepleft": "Move Camera to the left horizontally",
     "camerastepup": "Move Camera to the up vertically",
-    "camerastepdown": "Move Camera to the down vertically"
+    "camerastepdown": "Move Camera to the down vertically",
+    "scrollzoommodifier": "Modifier key to allow Zoom in/out with scroll wheel"
 }
